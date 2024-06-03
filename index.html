@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/progress.css" />
+    <link rel="stylesheet" href="css/style.css" />
 
     <link
       rel="icon"
@@ -15,6 +16,54 @@
     <title>Custom Video Player</title>
   </head>
   <body>
-    <script scr="script.js"></script>
+    <h1>Custom Video Player</h1>
+    <div class="video-container">
+      <div class="overlay-icon overlay-icon-visible" id="overlay-icon">
+        <i class="fa fa-play fa-2xl"></i>
+      </div>
+      <video src="src/videos/Coast_vid.mp4" id="video" class="screen"></video>
+
+      <div class="controls">
+        <button
+          class="btn skipBck"
+          id="skipBck"
+          data-description="Skip 5 seconds backward"
+        >
+          <i class="fa fa-arrow-rotate-left"></i>
+        </button>
+        <button class="btn" id="play">
+          <i class="fa fa-play fa-lg"></i>
+        </button>
+        <button class="btn" id="stop">
+          <i class="fa fa-stop fa-lg"></i>
+        </button>
+        <button
+          class="btn skipFwd"
+          id="skipFwd"
+          data-description="Skip 5 seconds forward"
+        >
+          <i class="fa fa-arrow-rotate-right"></i>
+        </button>
+
+        <div class="progress-container">
+          <input
+            type="range"
+            id="progress"
+            class="progress"
+            min="0"
+            max="100"
+            step="0.1"
+            value="0"
+          />
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <span class="timestamp" id="timestamp">00:00</span>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/f347a2f41e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
   </body>
 </html>
